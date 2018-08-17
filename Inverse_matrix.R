@@ -1,5 +1,7 @@
+##checks the matrix if the inverse is already calculated ,if it is the calculated inverse is returned else the inverse is calculated again
 
 
+##The function creates special matrix which gets the matrix ,sets the matrix and then get the inverse and finally set the inverse 
 makeCacheMatrix <- function(x = matrix()) {
     m <- NULL
     set <- function(y) {
@@ -13,7 +15,7 @@ makeCacheMatrix <- function(x = matrix()) {
          setsolve = setsolve,
          getsolve = getsolve)
 }
-
+##Cheks if the matrix is already inversed and prints the message "getting cached data" else calculates the matrix inverse
 cacheSolve <- function(x, ...) {
     m <- x$getsolve()
     if(!is.null(m)) {
@@ -26,7 +28,7 @@ cacheSolve <- function(x, ...) {
     m
 }
 
-
+##Examples 
 m1 <- matrix(c(1/2, -1/4, -1, 3/4), nrow = 2, ncol = 2)
 m1
 solve(m1)
